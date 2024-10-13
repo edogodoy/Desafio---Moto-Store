@@ -1,4 +1,15 @@
 /********************************************* GENERALES */
+
+:root {
+    --color-primario: #2B0D65;
+    --color-secundario: #4A0F6F;
+    --color-terciario: #650D1F;
+    --color-claro: #ecf0f1;
+    --color-oscuro: #34495e;
+    --color-prueba1: #f1c40f;
+    --color-prueba2: #e74c3c;
+}
+
 html {
     font-size: 62.5%;
     height: 100%;
@@ -6,7 +17,7 @@ html {
 body {
     font-size: 1.6rem;
     line-height: 1.5;
-    font-family: "Nunito", sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -17,9 +28,9 @@ body {
         "galeria"
         "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto 1fr auto;
     min-height: 100%;
-    background-color: rgb(172, 172, 172);
+    background-color: var(--color-claro);
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -43,15 +54,17 @@ header {
     font-size: 3rem;
     padding: 1rem 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #dff8ff;
-    color: #3498db;
+    background-color: var(--color-primario);
+    color: var(--color-claro);
 }
 footer {
     grid-area: footer;
-    background-color: #3498db;
-    color: white;
-    text-align: center;
-    padding: 3rem 0;
+    background-color: var(--color-secundario);
+    color: var(--color-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
 }
 .iconoheader {
     display: flex;
@@ -61,54 +74,11 @@ footer {
 }
 
 
-.layout {
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "sidebar productos"
-        "footer footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-}
-
 
 /********************************************* BUSCADOR */
 .buscador {
     grid-area: buscador;
-    margin: 5rem;
-}
-
-
-/********************************************* SIDEBAR */
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    grid-area: sidebar;
-    width: 15rem;
-    background-color: #3498db;
-    color: white;
-    padding: 2rem;
-
-    h2 {
-        margin-bottom: 1rem;
-    }
-
-}
-.sidebar ul {
-    list-style: none;
-    margin-bottom: .5rem;
-    padding-left: 1rem;
-    a {
-        color: rgb(255, 255, 255);
-        font-weight: bold;
-    }
-    p {
-        color: rgba(255, 255, 255, 0.6)
-    }
-}
-.sidebar li:hover {
-    padding-left: .5rem;
+    margin: 1rem;
 }
 
 
@@ -117,9 +87,9 @@ footer {
 .galeria {
     grid-area: galeria;
     display: grid;
-    gap: 6rem;
-    margin: 5rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    background-color: var(--color-oscuro);
+    height: 100%;
 }
 
 .product-card {
@@ -127,17 +97,16 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: var(--color-claro);
     border-radius: 1rem;
     padding: 2rem;
+    margin: 1rem;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .product-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 .product-image {
@@ -151,19 +120,19 @@ footer {
 
 .product-name {
     font-size: 3rem;
-    color: #333;
+    color: var(--color-oscuro);
 }
 
 .product-price {
     font-size: 5rem;
-    color: #27ae60;
+    color: var(--color-primario);
     margin-bottom: 2rem;
 }
 
 .buy-button {
     padding: 2rem 4rem;
-    background-color: #3498db;
-    color: white;
+    background-color: var(--color-terciario);
+    color: var(--color-claro);
     border: none;
     border-radius: .5rem;
     cursor: pointer;
@@ -172,5 +141,5 @@ footer {
 }
 
 .buy-button:hover {
-    background-color: #2980b9;
+    background-color: var(--color-secundario);
 }
