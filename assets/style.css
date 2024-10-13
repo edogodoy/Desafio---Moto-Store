@@ -15,6 +15,7 @@ html {
     height: 100%;
 }
 body {
+    height: 100vh;
     font-size: 1.6rem;
     line-height: 1.5;
     font-family: "Orbitron", sans-serif;
@@ -32,6 +33,16 @@ body {
     min-height: 100%;
     background-color: var(--color-claro);
 }
+@media (min-width: 576px) {
+    body {
+        grid-template-areas:
+            "header buscador"
+            "header galeria"
+            "footer footer";
+        grid-template-columns: auto 1fr;
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
@@ -57,15 +68,6 @@ header {
     background-color: var(--color-primario);
     color: var(--color-claro);
 }
-footer {
-    grid-area: footer;
-    background-color: var(--color-secundario);
-    color: var(--color-claro);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 6rem;
-}
 .iconoheader {
     display: flex;
     align-items: center;
@@ -75,6 +77,48 @@ footer {
 .menu   {
     cursor: pointer;
 }
+.fullmenu {
+    display: none;
+}
+@media (min-width: 576px) {
+    header {
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        height: 110%;
+    }
+    header .menu {
+        display: none;
+    }
+    header .fullmenu {
+        display: block;
+        list-style-type: none;
+        font-size: 2rem;
+        line-height: 1.8;
+        width: 100%;
+        padding: 0;
+
+        :hover {
+            background-color: var(--color-secundario);
+            cursor: pointer;
+        }
+        li:hover {
+            padding-left: .5rem;
+            font-weight: bold;
+        }
+    }
+    
+}
+footer {
+    grid-area: footer;
+    background-color: var(--color-secundario);
+    color: var(--color-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+}
+
 
 
 
@@ -86,6 +130,7 @@ footer {
     grid-area: buscador;
     margin: 1rem;
 }
+
 label {
     width: 25rem;
     font-weight: bold;
@@ -102,6 +147,19 @@ select:hover {
     border-color: var(--color-oscuro);
 }
 
+@media (min-width: 576px) {
+    .buscador {
+        justify-content: end;
+        margin: 2rem;
+    }
+    label {
+        width: 15rem;
+    }
+    select {
+        width: 40%;
+    }
+}
+
 
 /********************************************* GALERIA */
 
@@ -112,6 +170,7 @@ select:hover {
     background-color: var(--color-oscuro);
     height: 100%;
 }
+
 
 .product-card {
     display: flex;
@@ -163,6 +222,19 @@ select:hover {
 
 .buy-button:hover {
     background-color: var(--color-secundario);
+}
+
+@media (min-width: 576px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+        height: 100%;
+        padding: 5rem;
+        gap: 3rem;
+    }
+
+    footer {
+        margin-top: 10rem;
+    }
 }
 
 
