@@ -17,13 +17,19 @@
             <i class="fa-solid fa-motorcycle"></i>
             <p>Moto Store</p>
         </div>
-        <i class="fa-solid fa-bars"></i>
+        <i class="menu fa-solid fa-bars"></i>
     </header>
 
 
     <div class="buscador">
-        <input type="text" placeholder="Buscar...">
-        <button>Buscar</button>
+        <label for="ordenar-por">Ordenar por:</label>
+        <select id="ordenar-por" name="ordenar-por">
+            <option value="">Más vendidos</option>
+            <option value="">Nuevas llegadas</option>
+            <option value="">Menor a mayor precio</option>
+            <option value="">Mayor a menor precio</option>
+            <option value="">Descuentos</option>
+        </select>
     </div>
 
     <section class="galeria">

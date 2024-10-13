@@ -72,13 +72,34 @@ footer {
     justify-content: center;
     gap: 1rem;
 }
+.menu   {
+    cursor: pointer;
+}
 
 
 
 /********************************************* BUSCADOR */
 .buscador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     grid-area: buscador;
     margin: 1rem;
+}
+label {
+    width: 25rem;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: .8rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+select:hover {
+    border-color: var(--color-oscuro);
 }
 
 
@@ -143,3 +164,6 @@ footer {
 .buy-button:hover {
     background-color: var(--color-secundario);
 }
+
+
+
